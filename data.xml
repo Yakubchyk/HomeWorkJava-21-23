@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<operations>
+    <num1>23.0</num1>
+    <num2>23.0</num2>
+    <operator>mul</operator>
+    <result>529.0</result>
+</operations>
