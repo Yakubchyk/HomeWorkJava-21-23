@@ -2,16 +2,15 @@ package com.calculator.console;
 
 import com.calculator.model.Operation;
 import com.calculator.service.OperationService;
-import com.calculator.storage.ReadXML;
-import com.calculator.storage.WriteXML;
+import com.calculator.storage.XMLFileOperationStorage;
 import jakarta.xml.bind.JAXBException;
 
 public class ConsoleApplication implements Application {
     private final ConsoleReader consoleReader = new ConsoleReader();
     private final ConsoleWriter consoleWriter = new ConsoleWriter();
     private final OperationService operationService = new OperationService();
-    private final WriteXML writeXML = new WriteXML();
-    private final ReadXML readXML = new ReadXML();
+    XMLFileOperationStorage xmlFileOperationStorage = new XMLFileOperationStorage();
+
     private final Operation operation = new Operation();
 
     public void run() {
@@ -27,13 +26,13 @@ public class ConsoleApplication implements Application {
         consoleWriter.write("Result : " + operation.getResult());
 
         try {
-            writeXML.writeXML(operation);
+            xmlFileOperationStorage.save(operation);
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }
 
         try {
-            readXML.readXML();
+            xmlFileOperationStorage.findAll();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

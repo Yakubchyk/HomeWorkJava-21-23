@@ -1,25 +1,36 @@
 package com.calculator;
 
-import com.calculator.console.ConsoleApplication;
-import com.calculator.service.CalculatorServer;
+import com.calculator.model.Operation;
+import com.calculator.web.CalculatorServer;
 
 import java.io.IOException;
 
 public class App {
     public static void main(String[] args) {
-        ConsoleApplication consoleApplication = new ConsoleApplication();
-        consoleApplication.run();
 
-        CalculatorServer server = new CalculatorServer();
+        CalculatorServer calculatorServer = new CalculatorServer();
         try {
-            server.startServer(consoleApplication.getOperation());
+            calculatorServer.startServer();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
 
 
+
+
+//        ConsoleApplication consoleApplication = new ConsoleApplication();
+//        consoleApplication.run();
+//
+//        CalculatorServer server = new CalculatorServer();
+//        try {
+//            server.startServer(consoleApplication.getOperation());
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
 
 //        Operation operation = new Operation();
