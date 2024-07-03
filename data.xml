@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <operations>
-    <num1>1.0</num1>
-    <num2>1.0</num2>
+    <num1>330.0</num1>
+    <num2>250.0</num2>
     <operator>sum</operator>
-    <result>2.0</result>
+    <result>580.0</result>
 </operations>
